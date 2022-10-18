@@ -13,34 +13,39 @@
 </head>
 
 <body>
-  <h1>Just stream it</h1>
-
-  <div class="wrapper">
-    <div class="arrow__btn arrow_left"><a href="#" id="l_arrow" class="fade"><img src="img/arrow-left.png"></a></div>
-    <div id="section">
-      <div class="item">
-        <img src="img/1.jpg" alt="">
+  <div class="header">
+    <div id="logo"><img src="img/logo.png" alt="JustStreamIt"></div>
+    <div id="nav"></div>
+  </div>
+  <div id="tops">
+    <h2>Films les mieux notés</h2>
+    <div class="wrapper">
+      <div class="edges edge_left"><a href="#" id="l_arrow" class="fade"><img src="img/arrow-left.png"></a></div>
+      <div id="section">
+        <div class="item">
+          <img src="img/1.jpg" alt="">
+        </div>
+        <div class="item">
+          <img src="img/2.jpg" alt="">
+        </div>
+        <div class="item">
+          <img src="img/3.jpg" alt="">
+        </div>
+        <div class="item">
+          <img src="img/4.jpg" alt="">
+        </div>
+        <div class="item">
+          <img src="img/5.jpg" alt="">
+        </div>
+        <div class="item">
+          <img src="img/6.jpg" alt="">
+        </div>
+        <div class="item">
+          <img src="img/7.jpg" alt="">
+        </div>
       </div>
-      <div class="item">
-        <img src="img/2.jpg" alt="">
-      </div>
-      <div class="item">
-        <img src="img/3.jpg" alt="">
-      </div>
-      <div class="item">
-        <img src="img/4.jpg" alt="">
-      </div>
-      <div class="item">
-        <img src="img/5.jpg" alt="">
-      </div>
-      <div class="item">
-        <img src="img/6.jpg" alt="">
-      </div>
-      <div class="item">
-        <img src="img/7.jpg" alt="">
-      </div>
+      <div class="edges edge_right"><a href="#" id="r_arrow"><img src="img/arrow-right.png"></a></div>
     </div>
-    <div class="arrow__btn arrow_right"><a href="#" id="r_arrow"><img src="img/arrow-right.png"></a></div>
   </div>
 
 
@@ -75,15 +80,15 @@
       }
       if (direction == 'left') {
         carousel.animate([
-        { transform: 'translateX(0px)' },
-        { transform: 'translateX('+ TRANSLATE_LEFT +')' }
-      ], params);
-      } 
+          { transform: 'translateX(0px)' },
+          { transform: 'translateX(' + TRANSLATE_LEFT + ')' }
+        ], params);
+      }
       else if (direction == 'right') {
         carousel.animate([
-        { transform: 'translateX('+ TRANSLATE_LEFT +')' },
-        { transform: 'translateX(0px)' }
-      ], params);
+          { transform: 'translateX(' + TRANSLATE_LEFT + ')' },
+          { transform: 'translateX(0px)' }
+        ], params);
       }
     }
   </script>
