@@ -1,0 +1,19 @@
+{
+  "name": "jsi",
+  "version": "1.0.0",
+  "description": "\"OC student project\"",
+  "main": "index.html",
+  "scripts": {
+    "sass": "sass --watch ./sass/style.scss:./css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phi-lemon/jsi.git"
+  },
+  "author": "OM",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/phi-lemon/jsi/issues"
+  },
+  "homepage": "https://github.com/phi-lemon/jsi#readme"
+}

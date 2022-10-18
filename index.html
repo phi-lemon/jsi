@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Just stream it">
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+  <title>Just stream it</title>
+</head>
+
+<body>
+  <h1>Just stream it</h1>
+
+  <div class="wrapper">
+    <div class="arrow__btn arrow_left"><a href="#" id="l_arrow" class="fade"><img src="img/arrow-left.png"></a></div>
+    <div id="section">
+      <div class="item">
+        <img src="img/1.jpg" alt="">
+      </div>
+      <div class="item">
+        <img src="img/2.jpg" alt="">
+      </div>
+      <div class="item">
+        <img src="img/3.jpg" alt="">
+      </div>
+      <div class="item">
+        <img src="img/4.jpg" alt="">
+      </div>
+      <div class="item">
+        <img src="img/5.jpg" alt="">
+      </div>
+      <div class="item">
+        <img src="img/6.jpg" alt="">
+      </div>
+      <div class="item">
+        <img src="img/7.jpg" alt="">
+      </div>
+    </div>
+    <div class="arrow__btn arrow_right"><a href="#" id="r_arrow"><img src="img/arrow-right.png"></a></div>
+  </div>
+
+
+  <script type="text/javascript">
+    const TRANSLATE_LEFT = '-820px'
+    const TRANSLATE_RIGHT = '820px'
+
+    const r_arrow = document.getElementById('r_arrow');
+    const l_arrow = document.getElementById('l_arrow');
+
+    r_arrow.addEventListener('click', function (event) {
+      anim('left')
+      event.preventDefault();
+      r_arrow.classList.toggle('fade');
+      l_arrow.classList.toggle('fade');
+    });
+
+    l_arrow.addEventListener('click', function (event) {
+      anim('right')
+      event.preventDefault();
+      l_arrow.classList.toggle('fade');
+      r_arrow.classList.toggle('fade');
+    });
+
+    function anim(direction) {
+      carousel = document.getElementById("section")
+      params = {
+        duration: 1000,
+        iterations: 1,
+        easing: 'ease',
+        fill: 'forwards'
+      }
+      if (direction == 'left') {
+        carousel.animate([
+        { transform: 'translateX(0px)' },
+        { transform: 'translateX('+ TRANSLATE_LEFT +')' }
+      ], params);
+      } 
+      else if (direction == 'right') {
+        carousel.animate([
+        { transform: 'translateX('+ TRANSLATE_LEFT +')' },
+        { transform: 'translateX(0px)' }
+      ], params);
+      }
+    }
+  </script>
+
+
+</body>
+
+</html>
