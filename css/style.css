@@ -37,7 +37,7 @@ h2 {
   justify-items: right;
   align-items: center;
   background-color: rgba(27, 27, 27, 0.8);
-  border-bottom: 1px solid #343138;
+  border-bottom: 1px solid #474747;
 }
 
 #logo {
@@ -58,18 +58,32 @@ h2 {
 }
 
 #tops {
-  background-color: #2b2b2b;
-  border-top: 1px solid #343138;
+  background-color: #1b1b1b;
+  border-top: 1px solid #474747;
 }
 #tops .edges {
-  background-color: #2b2b2b;
+  background-color: #1b1b1b;
 }
 
 #cat_1 {
-  background-color: #1b1b1b;
+  background-color: #2b2b2b;
 }
 #cat_1 .edges {
+  background-color: #2b2b2b;
+}
+
+#cat_2 {
   background-color: #1b1b1b;
+}
+#cat_2 .edges {
+  background-color: #1b1b1b;
+}
+
+#cat_3 {
+  background-color: #2b2b2b;
+}
+#cat_3 .edges {
+  background-color: #2b2b2b;
 }
 
 .wrapper {
@@ -105,7 +119,7 @@ h2 {
 .wrapper #section_best img {
   border: 1px solid #999;
 }
-.wrapper #section {
+.wrapper .section {
   width: 1400px;
   display: grid;
   grid-template-columns: 182px 182px 182px 182px 182px 182px 182px;
@@ -117,26 +131,24 @@ h2 {
   /* fix grid overflow pb */
   padding-left: 10px;
 }
-.wrapper #section .item {
+.wrapper .section .item {
   transition: 300ms all;
   display: flex;
   align-items: center;
 }
-.wrapper #section .item:hover {
+.wrapper .section .item:hover {
   transform: scale(1.1);
   cursor: pointer;
 }
-.wrapper #section img {
+.wrapper .section img {
   border: 1px solid #999;
 }
 
-#r_arrow,
-#l_arrow {
+#r_arrow_top, #l_arrow_top, #r_arrow_1, #l_arrow_1, #r_arrow_2, #l_arrow_2, #r_arrow_3, #l_arrow_3 {
   opacity: 1;
   transition: opacity 1s;
 }
-#r_arrow.fade,
-#l_arrow.fade {
+#r_arrow_top.fade, #l_arrow_top.fade, #r_arrow_1.fade, #l_arrow_1.fade, #r_arrow_2.fade, #l_arrow_2.fade, #r_arrow_3.fade, #l_arrow_3.fade {
   opacity: 0;
 }
 
@@ -155,7 +167,7 @@ h2 {
 }
 
 :root {
-  --star-size: 60px;
+  --star-size: 50px;
   --star-color: #fff;
   --star-background: #fc0;
 }
@@ -166,6 +178,7 @@ h2 {
   font-size: var(--star-size);
   font-family: Times;
   line-height: 1;
+  margin-top: 10px;
 }
 .Stars::before {
   content: "★★★★★";

@@ -1,5 +1,7 @@
-$color_top: #2b2b2b;
-$color_cat1: #1b1b1b;
+$color_top: #1b1b1b;
+$color_cat1: #2b2b2b;
+$color_cat2: #1b1b1b;
+$color_cat3: #2b2b2b;
 $color_header: rgba(27, 27, 27, 0.8);
 
 html {
@@ -40,7 +42,7 @@ h2 {
   justify-items: right;
   align-items: center;
   background-color: $color_header;
-  border-bottom: 1px solid #343138;
+  border-bottom: 1px solid #474747;
 }
 
 #logo {
@@ -63,7 +65,7 @@ h2 {
 
 #tops {
   background-color: $color_top;
-  border-top: 1px solid #343138;
+  border-top: 1px solid #474747;
 
   .edges {
     background-color: $color_top;
@@ -71,11 +73,30 @@ h2 {
 
 }
 
+
 #cat_1 {
   background-color: $color_cat1;
 
   .edges {
     background-color: $color_cat1;
+  }
+
+}
+
+#cat_2 {
+  background-color: $color_cat2;
+
+  .edges {
+    background-color: $color_cat2;
+  }
+
+}
+
+#cat_3 {
+  background-color: $color_cat3;
+
+  .edges {
+    background-color: $color_cat3;
   }
 
 }
@@ -121,7 +142,7 @@ h2 {
   }
 
 
-  #section {
+  .section {
     width: 1400px;
     display: grid;
     grid-template-columns: 182px 182px 182px 182px 182px 182px 182px;
@@ -152,8 +173,7 @@ h2 {
   }
 }
 
-#r_arrow,
-#l_arrow {
+#r_arrow_top, #l_arrow_top, #r_arrow_1, #l_arrow_1, #r_arrow_2, #l_arrow_2, #r_arrow_3, #l_arrow_3 {
   opacity: 1;
   transition: opacity 1s;
 
@@ -181,9 +201,10 @@ h2 {
 }
 
 // rating
+// From https://css-tricks.com/five-methods-for-five-star-ratings/
 
 :root {
-  --star-size: 60px;
+  --star-size: 50px;
   --star-color: #fff;
   --star-background: #fc0;
 }
@@ -195,6 +216,7 @@ h2 {
   font-size: var(--star-size);
   font-family: Times; // make sure ★ appears correctly
   line-height: 1;
+  margin-top: 10px;
 
   &::before {
     content: '★★★★★';
