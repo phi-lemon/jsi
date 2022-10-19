@@ -10,7 +10,7 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lobster&Open+Sans:wght@300;500&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&Open+Sans:wght@300;500&display=swap" rel="stylesheet">
   <title>Just stream it</title>
 </head>
 
@@ -28,10 +28,12 @@
         <div id="infos_best">
           <h1>Hopeful Notes</h1>
           <p><strong>Réalisateur</strong> : Valerio Zanoli</p>
-          <p><strong>Avec</strong> : Abeni Wimbush, Colin Ross, Dennis Janiske, Grace Heemstra, Ian Poland, Kaitlyn Squires, Kimberly Harsch, Laural Merlington, Lori Silvey, Nicholas Sarjeant, Robert Gray, Rocky Rector, Sharon Hayes, Walter Nudo</p>
+          <p><strong>Avec</strong> : Abeni Wimbush, Colin Ross, Dennis Janiske, Grace Heemstra, Ian Poland, Kaitlyn
+            Squires, Kimberly Harsch, Laural Merlington, Lori Silvey, Nicholas Sarjeant, Robert Gray, Rocky Rector,
+            Sharon Hayes, Walter Nudo</p>
           <div class="Stars" style="--rating: 4.8;"></div>
           <div><a href="#" class="button">En savoir plus</a></div>
-        </div>  
+        </div>
         <div><img src="img/1.jpg" alt=""></div>
       </div>
       <div class="edges"></div>
@@ -45,7 +47,7 @@
     <div class="wrapper">
       <div class="edges edge_left"><a href="#" id="l_arrow_top" class="fade"><img src="img/arrow-left.png"></a></div>
       <div id="section_top" class="section">
-        <div class="item">
+        <div class="item open-modal">
           <img src="img/1.jpg" alt="">
         </div>
         <div class="item">
@@ -171,6 +173,37 @@
   </div>
   <!-- End cat 3 -->
 
+  <section class="modal hidden">
+    <div class="close">
+      <button class="btn-close">⨉</button>
+    </div>
+    <div class="infos_wrapper">
+      <div class="film_title">
+        <h3>Titre du film</h3>
+      </div>
+      <div>
+        <ul>
+          <li>Avec : </li>
+          <li>Réalisateur : </li>
+          <li>Note : </li>
+          <li>Date de sortie : </li>
+          <li>Genre : </li>
+          <li>Score Imdb : </li>
+          <li>Durée : </li>
+          <li>Pays d’origine : </li>
+          <li>Résultat au Box Office : </li>
+          <li>Résumé : </li>
+        </ul>
+      </div>
+      <div><img src="img/3.jpg" alt=""></div>
+    </div>
+    </div>
+  </section>
+
+  <div class="overlay hidden"></div>
+
   <script src="js/caroussel.js"></script>
+  <script src="js/modal.js"></script>
 </body>
+
 </html>
