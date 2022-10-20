@@ -1,6 +1,6 @@
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
-const openModalBtn = document.querySelector(".open-modal");
+const openModalBtn = document.querySelector(".open-modal"); // todo modifier avec querySelectorAll (sinon ne prend que le premier) + vérifier que l'élément est bien chargé
 const closeModalBtn = document.querySelector(".btn-close");
 
 // close modal function

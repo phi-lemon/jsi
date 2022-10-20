@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lobster&Open+Sans:wght@300;500&display=swap" rel="stylesheet">
+  <script src="js/getfilms.js"></script>
   <title>Just stream it</title>
 </head>
 
@@ -26,15 +27,8 @@
       <div class="edges"></div>
       <div id="section_best">
         <div id="infos_best">
-          <h1>Hopeful Notes</h1>
-          <p><strong>Réalisateur</strong> : Valerio Zanoli</p>
-          <p><strong>Avec</strong> : Abeni Wimbush, Colin Ross, Dennis Janiske, Grace Heemstra, Ian Poland, Kaitlyn
-            Squires, Kimberly Harsch, Laural Merlington, Lori Silvey, Nicholas Sarjeant, Robert Gray, Rocky Rector,
-            Sharon Hayes, Walter Nudo</p>
-          <div class="Stars" style="--rating: 4.8;"></div>
-          <div><a href="#" class="button">En savoir plus</a></div>
         </div>
-        <div><img src="img/1.jpg" alt=""></div>
+        <div id="poster"></div>
       </div>
       <div class="edges"></div>
     </div>
@@ -202,8 +196,12 @@
 
   <div class="overlay hidden"></div>
 
+  <script type="text/javascript">
+    getBestFilm('http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&page_size=7')
+  </script>
   <script src="js/caroussel.js"></script>
   <script src="js/modal.js"></script>
+
 </body>
 
 </html>
