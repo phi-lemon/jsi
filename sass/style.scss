@@ -137,7 +137,7 @@ h2 {
 
       p {
         display: block;
-        margin-top: 10px;
+        margin: 10px 0;
       }
 
     }
@@ -211,6 +211,7 @@ h2 {
 
 :root {
   --star-size: 50px;
+  --star-size-small: 20px;
   --star-color: #fff;
   --star-background: #fc0;
 }
@@ -222,7 +223,7 @@ h2 {
   font-size: var(--star-size);
   font-family: Times; // make sure ★ appears correctly
   line-height: 1;
-  margin-top: 10px;
+  // margin-top: 10px;
 
   &::before {
     content: '★★★★★';
@@ -262,25 +263,25 @@ a.button:hover {
   align-items: left;
   position: absolute;
   gap: 0.4rem;
-  width: 600px;
+  width: 800px;
   padding: 30px;
   min-height: 250px;
   z-index: 3;
   top: 20%;
-  background-color: white;
+  background: rgba(255, 255, 255, 0.9);
   border: 1px solid #ddd;
   border-radius: 15px;
   color: #333;
 
 }
 
-.infos_wrapper {
+.modal_infos_wrapper {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr 182px;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
   justify-items: stretch;
-  align-items: stretch;
+  align-items: end;
 
   img {
     border: 1px solid #999;
@@ -288,15 +289,27 @@ a.button:hover {
 
 }
 
-.film_title {
-  grid-column-start: 1;
-  grid-column-end: 3;
-  grid-row-start: 1;
-  grid-row-end: 3;
+#modal_infos ul {
+  margin-top: 20px;
+  list-style: inside; 
+
+  b {
+    font-weight: 500;
+  }
+
+}
+
+.modal_film_title {
+  // grid-column-start: 1;
+  // grid-column-end: 3;
+  // grid-row-start: 1;
+  // grid-row-end: 3;
 
   h3 {
     font-family: Lobster, sans-serif;
     font-size: 30px;
+    padding: 0;
+    margin: 0;
   }
 }
 

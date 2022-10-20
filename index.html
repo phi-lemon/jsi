@@ -28,7 +28,7 @@
       <div id="section_best">
         <div id="infos_best">
         </div>
-        <div id="poster"></div>
+        <div id="main_poster"></div>
       </div>
       <div class="edges"></div>
     </div>
@@ -41,7 +41,7 @@
     <div class="wrapper">
       <div class="edges edge_left"><a href="#" id="l_arrow_top" class="fade"><img src="img/arrow-left.png"></a></div>
       <div id="section_top" class="section">
-        <div class="item open-modal">
+        <div class="item">
           <img src="img/1.jpg" alt="">
         </div>
         <div class="item">
@@ -168,28 +168,19 @@
   <!-- End cat 3 -->
 
   <section class="modal hidden">
-    <div class="close">
+    <!-- <div class="close">
       <button class="btn-close">⨉</button>
-    </div>
-    <div class="infos_wrapper">
-      <div class="film_title">
-        <h3>Titre du film</h3>
+    </div> -->
+    <div class="modal_infos_wrapper">
+      <div class="modal_film_title">
+        <h3></h3>
       </div>
-      <div>
-        <ul>
-          <li>Avec : </li>
-          <li>Réalisateur : </li>
-          <li>Note : </li>
-          <li>Date de sortie : </li>
-          <li>Genre : </li>
-          <li>Score Imdb : </li>
-          <li>Durée : </li>
-          <li>Pays d’origine : </li>
-          <li>Résultat au Box Office : </li>
-          <li>Résumé : </li>
-        </ul>
+      <div class="close">
+        <button class="btn-close">⨉</button>
       </div>
-      <div><img src="img/3.jpg" alt=""></div>
+      <div id="modal_infos">
+      </div>
+      <div id="modal_poster"></div>
     </div>
     </div>
   </section>
@@ -197,10 +188,10 @@
   <div class="overlay hidden"></div>
 
   <script type="text/javascript">
-    getBestFilm('http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&page_size=7')
+    getBestFilmDetails(openModal)
   </script>
   <script src="js/caroussel.js"></script>
-  <script src="js/modal.js"></script>
+  <!-- <script defer src="js/modal.js"></script> -->
 
 </body>
 
