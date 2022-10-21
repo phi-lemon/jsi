@@ -1,6 +1,6 @@
 # JSI
 
-JSI is a website to get films information (director, casting, scores, rating...) from a rest API.
+JSI is a website to get films information (director, casting, scores, rating...) from a rest API : [OCMovies-API](https://github.com/OpenClassrooms-Student-Center/OCMovies-API-EN-FR)
 
 ## Installation
 
