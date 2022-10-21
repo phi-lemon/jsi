@@ -7,13 +7,14 @@ JSI is a website to get films information (director, casting, scores, rating...)
 You need python to run the web server.<br>
 If you don't have python installed, download and install python from here : https://www.python.org/downloads/
 
+### Get the website
+Create a folder for the website and get the files :
 ```bash
 git clone https://github.com/phi-lemon/jsi.git
 ```
 
-
 ### Install the web server locally
-Create a separate folder (outside of this project folder)
+Create a separate folder for the server (outside of the website folder)
 ```bash
 git clone https://github.com/OpenClassrooms-Student-Center/OCMovies-API-EN-FR.git
 python -m venv venv
