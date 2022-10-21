@@ -76,7 +76,7 @@ async function getFilmDetails(film_id) {
     rating = detailsJSON.avg_vote
     score = parseFloat(detailsJSON.imdb_score)
     directors = detailsJSON.directors.join(", ")
-    actors = detailsJSON.directors.join(", ")
+    actors = detailsJSON.actors.join(", ")
     duration = detailsJSON.duration
     countries = detailsJSON.countries.join(", ")
     box_office = detailsJSON.worldwide_gross_income ? detailsJSON.worldwide_gross_income : "NC"
