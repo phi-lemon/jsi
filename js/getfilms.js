@@ -1,22 +1,23 @@
 const DOMAIN = 'http://localhost:8000/'
+const URI_CAT = 'api/v1/titles/?sort_by=-imdb_score&page_size=7'
 
 function prom(url) {
     // returns a promise
     var p = new Promise(function (resolved, rejected) {
-        var ajax = new XMLHttpRequest();
-        ajax.open("GET", url, true);
-        ajax.timeout = 2000; // ms
-        ajax.onload = function () {
+        var req = new XMLHttpRequest();
+        req.open("GET", url, true);
+        req.timeout = 2000; // ms
+        req.onload = function () {
             if (this.status == 200) {
-                /* send ajax content in resolved function */
+                /* send req content in resolved function */
                 resolved(this.response);
             } else {
                 rejected("Erreur HTTP n°" + this.status + " : " + this.statusText);
             }
         }
-        ajax.ontimeout = function () { rejected("Erreur timeout"); }
-        ajax.onerror = function () { rejected("Erreur réseau"); }
-        ajax.send();
+        req.ontimeout = function () { rejected("Erreur timeout"); }
+        req.onerror = function () { rejected("Erreur réseau"); }
+        req.send();
     });
     return p
 }
@@ -24,20 +25,23 @@ function prom(url) {
 async function getFilms(cat) {
     switch (cat) {
         case 'tops':
-            var url = DOMAIN + 'api/v1/titles/?sort_by=-imdb_score&page_size=7'
+            var url = DOMAIN + URI_CAT
             var section = 'section_top'
             break;
         case 'cat_1':
-            var url = DOMAIN + 'api/v1/titles/?sort_by=-imdb_score&page_size=7&genre=music'
+            var url = DOMAIN + URI_CAT + '&genre=Comedy'
             var section = 'section_1'
+            document.querySelector('#cat_1 h2').innerHTML = "Comédie"
             break;
         case 'cat_2':
-            var url = DOMAIN + 'api/v1/titles/?sort_by=-imdb_score&page_size=7&genre=Drama'
+            var url = DOMAIN + URI_CAT + '&genre=Drama'
             var section = 'section_2'
+            document.querySelector('#cat_2 h2').innerHTML = "Drame"
             break;
         case 'cat_3':
-            var url = DOMAIN + 'api/v1/titles/?sort_by=-imdb_score&page_size=7&genre=Comedy'
+            var url = DOMAIN + URI_CAT + '&genre=Romance'
             var section = 'section_3'
+            document.querySelector('#cat_3 h2').innerHTML = "Romance"
             break;
     }
     var content = await prom(url)
@@ -47,7 +51,7 @@ async function getFilms(cat) {
     for (var film in results) {
         document.getElementById(section).innerHTML += `
         <div class="item" onclick="openModal('${results[film].id}')">
-            <img src="${results[film].image_url}" alt="">
+            <img src="${results[film].image_url}" alt="${results[film].title}">
         </div>`
     }
 }
@@ -84,7 +88,7 @@ async function getFilmDetails(film_id) {
 
     modal_infos = document.querySelector('#modal_infos')
     modal_infos.innerHTML = `
-        <div class="Stars" style="--rating: ${score / 2};" title="Imdb score : ${score}"></div>
+        <div class="Stars" style="--rating: ${score / 2};" title="Score Imdb : ${score}"></div>
         <ul>
             <li><b>Réalisateur(s)</b> : ${directors}</li>
             <li><b>Avec</b> : ${actors}</li>
@@ -95,19 +99,20 @@ async function getFilmDetails(film_id) {
             <li><b>Durée</b> : ${duration}</li>
             <li><b>Pays d’origine</b> : ${countries}</li>
             <li><b>Résultat au Box Office</b> : ${box_office}</li>
-            <li><b>Résumé</b> : ${resume}</li>
-        </ul>`
+        </ul>
+        <p><b class="resume">Résumé</b> : ${resume}</p>
+        `
 
     modal_poster = document.querySelector('#modal_poster')
     modal_poster.innerHTML = `
-        <img src="${img_url}" />`
+        <img src="${img_url}" alt="${title}" />`
 }
 
 
 async function getBestFilmDetails() {
     /** 
      * Get unique best film details from api endpoint
-     * Then write html in main block and in the modal window
+     * Then write html in main block
      * NB : Async functions always return a promise
      */
 
@@ -135,7 +140,7 @@ async function getBestFilmDetails() {
         <div><a href="#" class="button" onclick="openModal('${id}')">En savoir plus</a></div>`
     main_poster = document.querySelector('#main_poster')
     main_poster.innerHTML = `
-        <img src="${img_url}" />`
+        <img src="${img_url}" alt="${title}" />`
 }
 
 
