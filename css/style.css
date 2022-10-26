@@ -389,6 +389,9 @@ h2 {
   section .modal_infos_wrapper #modal_poster {
     display: none;
   }
+  .close {
+    order: -1;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

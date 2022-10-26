@@ -102,11 +102,12 @@
   <div class="overlay hidden"></div>
 
   <script>
-    getBestFilmDetails()
-    getFilms('tops')
-    getFilms('cat_1')
-    getFilms('cat_2')
-    getFilms('cat_3')
+    getBestFilmDetails();
+    // Carousels :
+    const cats = ['tops', 'cat_1', 'cat_2', 'cat_3'];
+    cats.forEach(function(cat) {
+      getFilms(cat);
+    });
   </script>
   <script src="js/caroussel.js"></script>
 
